@@ -357,6 +357,7 @@ var XF_EXIMG={
  lun02:{img:'Leverage_Chest_Press',st:'similar',note:'Prensa convergente de palanca, pero sentado; la tuya es en banco plano tumbado.'},
  lun03:{img:'Butterfly',st:'exacto',note:''},
  lun04:{img:'Cable_Seated_Lateral_Raise',st:'similar',note:'En la foto se hace a dos brazos con poleas cruzadas; tú lo haces a un brazo con la polea baja.'},
+ lun05:{img:'Seated_Side_Lateral_Raise',st:'similar',note:'Misma elevación lateral sentado, pero en la foto con mancuernas; la tuya es en máquina (no hay imagen libre de la máquina).'},
  lun06:{img:'Cable_Rope_Overhead_Triceps_Extension',st:'exacto',note:''},
  lun07:{img:'Cable_One_Arm_Tricep_Extension',st:'exacto',note:'Pushdown a una mano en polea alta (en la foto, agarre supino; el neutro o prono también vale).'},
  lun08:{img:'Ab_Crunch_Machine',st:'exacto',note:''},
@@ -377,6 +378,7 @@ var XF_EXIMG={
  jue02:{img:'Leverage_High_Row',st:'exacto',note:''},
  jue03:{img:'Seated_One-arm_Cable_Pulley_Rows',st:'similar',note:'Remo bajo a un brazo en polea; el tuyo es en la máquina isolateral de palanca con apoyo de pecho.'},
  jue04:{img:'Smith_Machine_Incline_Bench_Press',st:'exacto',note:''},
+ jue05:{img:'Seated_Side_Lateral_Raise',st:'similar',note:'Misma elevación lateral sentado, pero en la foto con mancuernas; la tuya es en máquina (no hay imagen libre de la máquina).'},
  jue06:{img:'Reverse_Machine_Flyes',st:'exacto',note:'Opción pec-deck invertido.'},
  jue07:{img:'Ab_Crunch_Machine',st:'exacto',note:''},
  vie01:{img:'Smith_Machine_Stiff-Legged_Deadlift',st:'exacto',note:'Multipower. En el rumano mantén las rodillas algo flexionadas y fijas.'},
@@ -390,46 +392,6 @@ var XF_EXIMG={
  sab03b:{img:'Triceps_Pushdown',st:'exacto',note:''},
  sab04a:{img:'Cable_Hammer_Curls_-_Rope_Attachment',st:'exacto',note:''},
  sab04b:{img:'Cable_Rope_Overhead_Triceps_Extension',st:'exacto',note:''}
-};
-// Ilustraciones anatómicas propias (generadas para X-FRAME). Tienen prioridad sobre las fotos; mar07a/mar07b siguen con foto.
-var XF_EXILL={
- lun01:{img:'ai_lun01',note:''},
- lun02:{img:'ai_lun02',note:''},
- lun03:{img:'ai_lun03',note:''},
- lun04:{img:'ai_lun04',note:''},
- lun05:{img:'ai_lun05',note:''},
- lun06:{img:'ai_lun06',note:''},
- lun07:{img:'ai_lun07',note:''},
- lun08:{img:'ai_lun08',note:''},
- mar01:{img:'ai_mar01',note:''},
- mar02:{img:'ai_mar02',note:''},
- mar03:{img:'ai_mar03',note:'Máquina isolateral genérica; mantén el pecho apoyado e inclinado unos 45°.'},
- mar04:{img:'ai_mar04',note:''},
- mar05:{img:'ai_mar05',note:''},
- mar06:{img:'ai_mar06',note:''},
- mie01:{img:'ai_mie01',note:''},
- mie02:{img:'ai_mie02',note:''},
- mie03:{img:'ai_mie03',note:''},
- mie04:{img:'ai_mie04',note:'Máquina simplificada: lo importante es el gesto (talones hacia debajo del asiento).'},
- mie05:{img:'ai_mie05',note:'Los dos fotogramas tienen un encuadre ligeramente distinto.'},
- jue01:{img:'ai_jue01',note:''},
- jue02:{img:'ai_jue02',note:''},
- jue03:{img:'ai_jue03',note:''},
- jue04:{img:'ai_jue04',note:''},
- jue05:{img:'ai_lun05',note:''},
- jue06:{img:'ai_mar04',note:'Opción pec-deck invertido.'},
- jue07:{img:'ai_lun08',note:''},
- vie01:{img:'ai_vie01',note:'Ilustrado en máquina de palanca; en multipower el gesto es el mismo.'},
- vie02:{img:'ai_vie02',note:''},
- vie03:{img:'ai_mie02',note:''},
- vie04:{img:'ai_mie03',note:''},
- vie05:{img:'ai_vie05',note:'Movimiento de tobillo corto: sube al máximo sobre la punta del pie.'},
- sab01:{img:'ai_lun04',note:''},
- sab02:{img:'ai_mar04',note:''},
- sab03a:{img:'ai_sab03a',note:''},
- sab03b:{img:'ai_sab03b',note:''},
- sab04a:{img:'ai_sab04a',note:''},
- sab04b:{img:'ai_lun06',note:''}
 };
 // IMG-END
 // Origen y licencia de cada imagen
@@ -487,14 +449,14 @@ mar01:{c:'Asiento de forma que el hombro quede alineado con el eje de giro de la
  k:['Músculo objetivo: dorsal ancho (extensión del hombro); ayuda el redondo mayor.','La fuerza sale del codo, no de las manos: agarra flojo.','No arquees la zona lumbar ni dejes que las costillas se abran arriba.'],
  m:'Arriba, con los brazos por encima de la cabeza y el dorsal estirado. La máquina de pullover mantiene la resistencia en todo el arco gracias a la leva o la palanca, a diferencia de la mancuerna, que pierde carga al pasar por encima de la cara. Controla especialmente el último tramo de subida (estiramiento) con una pausa breve.',
  x:['Doblar los codos y convertirlo en un jalón.','Separar la espalda baja del respaldo arqueando.','Recortar el estiramiento arriba.']},
-mar02:{c:'Ajusta el asiento y el rodillo de los muslos para quedar fijo. Agarra el asa de un lado con el brazo estirado por encima de la cabeza. Tronco erguido o un poco reclinado.',
- e:['Empieza con el brazo totalmente estirado y el hombro elevado (dorsal estirado).','Primero baja el hombro (depresión escapular) y después tira llevando el codo hacia abajo y hacia la cadera.','Termina con el codo junto al costado y aprieta 1 s.','Vuelve en 2–3 s hasta el estiramiento completo.','Empieza por el lado izquierdo; el derecho iguala las repeticiones limpias.'],
- k:['Músculo objetivo: dorsal ancho (amplitud); ayudan el redondo mayor y el bíceps.','Sigue el arco convergente de la máquina: el codo baja por delante del cuerpo hacia la cadera.','Inspira arriba, espira al tirar.'],
+mar02:{c:'Ajusta el asiento y el rodillo de los muslos para quedar fijo. Agarra el asa de un lado con agarre neutro (palma mirando hacia dentro) y el brazo estirado por encima de la cabeza. Tronco erguido o un poco reclinado.',
+ e:['Empieza con el brazo totalmente estirado y el hombro elevado (dorsal estirado).','Primero baja el hombro (depresión escapular) y después tira con agarre neutro llevando el codo hacia abajo, pegado al cuerpo, hacia la cadera/costillas.','Termina con el codo junto al costado (asa a la altura del pecho) y aprieta el dorsal 1 s.','Vuelve en 2–3 s hasta el estiramiento completo, brazo estirado por encima de la cabeza.','Empieza por el lado izquierdo; el derecho iguala las repeticiones limpias.'],
+ k:['Músculo objetivo: dorsal ancho (amplitud); ayudan el redondo mayor y el bíceps.','Agarre neutro y codo cerca del cuerpo: no abras el codo hacia fuera (eso pasa la carga a la espalda alta).','Sigue el arco convergente de la máquina: el codo baja por delante del cuerpo hacia la cadera.','Inspira arriba, espira al tirar.'],
  m:'En el estiramiento de arriba, con el brazo por encima de la cabeza, y al llevar el codo a la cadera. Al ser unilateral y convergente puedes ganar un poco más de recorrido arriba que con barra. No dejes que el peso «tire» del hombro sin control: el estiramiento es activo y lento.',
  x:['Tirar con el bíceps llevando la mano en vez del codo.','Inclinarse mucho hacia atrás y convertirlo en un remo.','No estirar del todo arriba.']},
-mar03:{c:'Pecho firme contra el apoyo y asiento a una altura en la que las asas superiores (agarre ancho, palmas hacia abajo) queden a la altura de los hombros o algo por debajo. Pies apoyados. Inclina el tronco unos 45° con el pecho apretado contra el apoyo, no en vertical: así cargas mejor el dorsal.',
- e:['Empieza con los brazos extendidos y los hombros adelantados (escápulas separadas).','Tira con los codos abiertos a unos 45–60° del tronco, hacia atrás, hasta que los codos pasen la línea del cuerpo.','Junta las escápulas al final y aprieta 1 s.','Vuelve en 2–3 s dejando que las escápulas se separen del todo delante.'],
- k:['Tronco inclinado ~45° y pecho pegado al apoyo durante toda la serie (no te sientes en vertical): carga más el dorsal.','Músculo objetivo: espalda alta (trapecio medio, romboides) y deltoides posterior; el dorsal ayuda.','El pecho no se separa del apoyo: si te separas, es impulso.','Espira al tirar, inspira al volver.'],
+mar03:{c:'Pecho firme contra el apoyo y asiento a una altura en la que las asas superiores (agarre ancho, palmas hacia abajo) queden a la altura de los hombros o algo por debajo. Pies apoyados. Inclina el tronco unos 45° con el pecho apretado contra el apoyo, no en vertical.',
+ e:['Empieza con los brazos extendidos y los hombros adelantados (escápulas separadas).','Tira con agarre ancho y los codos abiertos a unos 45–60° del tronco, llevando las asas hacia la parte baja del pecho, hasta que los codos pasen la línea del cuerpo.','Junta las escápulas al final y aprieta 1 s.','Vuelve en 2–3 s dejando que las escápulas se separen del todo delante.'],
+ k:['Tronco inclinado ~45° y pecho pegado al apoyo durante toda la serie (no te sientes en vertical).','Músculo objetivo: espalda alta (romboides, trapecio medio, deltoides posterior); el dorsal colabora algo.','No pegues los codos al cuerpo: con agarre ancho los codos van abiertos, no hacia las caderas.','El pecho no se separa del apoyo: si te separas, es impulso.','Espira al tirar, inspira al volver.'],
  m:'En las dos puntas: al final del tirón (retracción escapular completa, con los codos detrás del cuerpo) y en el estiramiento delante, con las escápulas abiertas. En este remo de palanca la parte final suele ser la más dura: mantén ahí la pausa de 1 s y no recortes el estiramiento al volver.',
  x:['Separar el pecho del apoyo para tirar con el cuerpo.','Encoger los hombros hacia las orejas.','Recorrido corto delante.']},
 mar04:{c:'Asiento de forma que las asas queden a la altura de los hombros. Pecho contra el respaldo. Brazos estirados delante con los codos apenas flexionados; agarre neutro o prono según la máquina.',
@@ -1165,7 +1127,7 @@ function vAjustes(){var lb=st.lastBackup?new Date(st.lastBackup):null;
      '</div><button class="btn ghost" data-act="cfgreset" data-id="'+e.id+'">Restablecer valores de la rutina</button></details>';});});
   h+='</div><div class="card"><h3>Protocolo ON AIR X-FRAME</h3>'+PROTOCOLO.map(function(p){return'<details><summary>'+esc(p[0])+'</summary><p class="sm">'+esc(p[1])+'</p></details>';}).join('')+'</div>';
   h+=vRutinaCard();
-  h+='<div class="card"><h3>Créditos de imágenes</h3><div class="mu sm">Ilustraciones anatómicas marcadas «Ilustración generada»: creadas con IA para X-FRAME (sin imágenes de terceros como base); la máquina puede no ser idéntica a la tuya. Fotos: free-exercise-db (yuhonas), dominio público (Unlicense). Las imágenes marcadas «Variante similar» no son tu máquina exacta. Los vídeos de técnica marcados «generado» están creados con IA; la máquina puede no ser idéntica a la de tu gimnasio. Sonido «Yeah buddy!»: voz sintética genérica (Piper TTS, voz «joe», CC0).</div></div>';
+  h+='<div class="card"><h3>Créditos de imágenes</h3><div class="mu sm">Fotos: free-exercise-db (yuhonas), dominio público (Unlicense). Las imágenes marcadas «Variante similar» no son tu máquina exacta. Los vídeos de técnica marcados «generado» están creados con IA; la máquina puede no ser idéntica a la de tu gimnasio. Sonido «Yeah buddy!»: voz sintética genérica (Piper TTS, voz «joe», CC0).</div></div>';
   h+='<div class="card"><h3>Zona peligrosa</h3><button class="btn danger" data-act="wipe">Borrar todos los datos</button></div><div class="mu sm" style="text-align:center;margin:10px 0 20px">X-FRAME</div>';
   return h;}
 // ---------- copia de seguridad ----------
@@ -1192,22 +1154,18 @@ function exImgInfo(id){var m=(typeof XF_EXIMG!=='undefined'&&XF_EXIMG[id])||null
 function libImgInfo(e){var dbid=e&&e.lib;if(!dbid&&e&&e.id&&e.id.indexOf('fx_')===0){var r=libIndex()[e.id];dbid=r&&r[0];}
   if(!dbid)return null;var r2=(window.XF_LIB||[]).filter(function(x){return x[0]===dbid;})[0];if(!r2||!r2[7])return null;
   var u=REMOTE_IMG+encodeURIComponent(dbid)+'/';return{a:u+'0.jpg',b:u+'1.jpg',st:'biblioteca',note:'',src:XF_IMGSRC._default,remote:true};}
-function illInfo(id){var m=(typeof XF_EXILL!=='undefined'&&id&&XF_EXILL[id])||null;if(!m)return null;
-  return{a:imgSrc(m.img,0),b:imgSrc(m.img,1),st:'ilustracion',note:m.note||'',src:{src:'Ilustración generada para X-FRAME',lic:'propia',credit:false},ill:true};}
-function imgFor(e){return illInfo(e.id)||exImgInfo(e.id)||(e.img&&(illInfo(e.img)||exImgInfo(e.img)))||libImgInfo(e);}
+function imgFor(e){return exImgInfo(e.id)||(e.img&&exImgInfo(e.img))||libImgInfo(e);}
 function videoFor(id){var v=(typeof XF_EXVIDEO!=='undefined'&&XF_EXVIDEO[id])||null;if(v&&window.XF_VIDDATA&&XF_VIDDATA[id])return XF_VIDDATA[id];return v;}
 function thumb(e,small){var m=imgFor(e);if(!m)return small?'<div class="thumb sm2 noimg">🏋️</div>':'';
-  return'<button class="thumb'+(small?' sm2':'')+'" data-act="tec" data-id="'+esc(e.id)+'" aria-label="Ver técnica"><img src="'+m.a+'" alt="" loading="lazy" decoding="async"><img class="f2" src="'+m.b+'" alt="" loading="lazy" decoding="async">'+(small?'':'<span class="ref">'+(m.ill?'técnica':videoFor(e.id)?'vídeo':m.st==='similar'?'similar':'técnica')+'</span>')+'</button>';}
+  return'<button class="thumb'+(small?' sm2':'')+'" data-act="tec" data-id="'+esc(e.id)+'" aria-label="Ver técnica"><img src="'+m.a+'" alt="" loading="lazy" decoding="async"><img class="f2" src="'+m.b+'" alt="" loading="lazy" decoding="async">'+(small?'':'<span class="ref">'+(videoFor(e.id)?'vídeo':m.st==='similar'?'similar':'técnica')+'</span>')+'</button>';}
 function tecOf(id){return(typeof XF_TEC!=='undefined'&&XF_TEC[id])||null;}
 function vTec(id){var e=getEx(id)||libDef(id)||{id:id,n:exName(id),eq:''},m=imgFor(e),v=videoFor(id),t=tecOf(id);
   var h='<div class="sheet"><div class="shh"><div class="sht">'+esc(e.n)+'</div><button class="shx" data-act="mclose" aria-label="Cerrar">✕</button></div><div class="shb">';
-  var mode=(v&&m)?(ui.tecMode==='vid'?'vid':'ill'):(v?'vid':'ill');
-  if(v&&m)h+='<div class="seg tecseg"><button class="'+(mode==='ill'?'on':'')+'" data-act="tecmode" data-m="ill">Ilustración</button><button class="'+(mode==='vid'?'on':'')+'" data-act="tecmode" data-m="vid">Vídeo</button></div>';
+  var mode=v?'vid':'img';
   if(mode==='vid')h+='<div class="zimg vid"><video src="'+esc(v)+'" autoplay loop muted playsinline webkit-playsinline preload="auto"></video></div>';
   else if(m)h+='<div class="zimg big"><img src="'+m.a+'" alt=""><img class="f2 slow" src="'+m.b+'" alt=""></div>';
   else h+='<div class="zimg big noimg">Sin imagen</div>';
   if(mode==='vid'){h+='<div class="imgtag ok vg">Vídeo de técnica (generado)</div><div class="mu sm">Vídeo generado por IA a partir de la técnica descrita abajo; la máquina puede no ser idéntica a la de tu gimnasio.</div>';}
-  else if(m&&m.ill){h+='<div class="imgtag ok ig">Ilustración generada</div><div class="mu sm">Ilustración anatómica creada con IA para X-FRAME: en rojo, el músculo principal. Inicio y final del movimiento alternándose; la máquina puede no ser idéntica a la de tu gimnasio.'+(m.note?' '+esc(m.note):'')+'</div>';}
   else if(m){h+='<div class="imgtag '+(m.st==='similar'?'sim':'ok')+'">'+(m.st==='similar'?'Variante similar':m.st==='biblioteca'?'Imagen de la biblioteca':'Ejercicio exacto')+'</div>';
     if(m.note)h+='<div class="mu sm">'+esc(m.note)+'</div>';
     if(m.src&&m.src.credit)h+='<div class="credit">Imagen: '+esc(m.src.src)+' · '+esc(m.src.lic)+'</div>';}
@@ -1867,7 +1825,6 @@ document.addEventListener('click',function(ev){var b=ev.target.closest('[data-ac
   sndprev:function(){var k=b.dataset.k,sel=$('#snd-'+k);playSound(sel?sel.value:(k==='rest'?sndRestKey():sndPRKey()),k,CHIME_PEAK*vol()*2);},
   sndup:function(){var i=$('#sndfile-'+b.dataset.k);if(i)i.click();},
   snddel:function(){var k=b.dataset.k;if(!confirm('¿Quitar tu audio?'))return;sndDel(k).then(function(){var pk=k==='rest'?'sndRest':'sndPR';if(st.prefs[pk]==='mine')st.prefs[pk]=k==='rest'?'chime':'campana';save();rerenderKeep();toast('Audio quitado');});},
-  tecmode:function(){ui.tecMode=b.dataset.m==='vid'?'vid':'ill';renderModal();},
   testwarn:function(){prewarn();vib(60);},
   cfgreset:function(){delete st.cfg[b.dataset.id];save();render();toast('Valores restablecidos');},
   sub:function(){ui.sub=b.dataset.s;if(ui.sub==='snaps')SNAPS=null;render();},
