@@ -1,14 +1,14 @@
 {
- "name": "Xframe",
- "short_name": "Xframe",
- "description": "Rutina X-FRAME ON AIR v2: registro de entrenos, back-offs automáticos y peso diario.",
+ "name": "X-FRAME ON AIR",
+ "short_name": "X-FRAME",
+ "description": "Rutina X-FRAME ON AIR: registro de entrenos, back-offs automáticos y peso diario.",
  "lang": "es",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
  "orientation": "portrait",
- "background_color": "#0b0e12",
- "theme_color": "#39d0d8",
+ "background_color": "#000000",
+ "theme_color": "#000000",
  "icons": [
   {
    "src": "icon-192.png",
