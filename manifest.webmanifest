@@ -1,7 +1,7 @@
 {
- "name": "X-FRAME ON AIR",
+ "name": "X-FRAME",
  "short_name": "X-FRAME",
- "description": "Rutina X-FRAME ON AIR: registro de entrenos, back-offs automáticos y peso diario.",
+ "description": "Rutina ON AIR X-FRAME: registro de entrenos, back-offs automáticos y peso diario.",
  "lang": "es",
  "start_url": "./",
  "scope": "./",
