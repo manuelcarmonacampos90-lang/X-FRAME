@@ -270,6 +270,10 @@ input[type=range]{width:100%;height:40px;accent-color:#39d0d8}
 #timer .tl{order:-1;flex:0 0 100%;font-size:14px;font-weight:700;color:var(--tx);-webkit-line-clamp:2;padding-right:4px}
 #timer .tt{min-width:96px;font-size:38px;flex:0 0 auto}
 #timer button{flex:1 1 0}#timer button.skip{flex:1.3 1 0}
+
+.tecseg{margin-bottom:8px}.tecseg button{height:36px;font-size:14px}
+.imgtag.ig{background:#f2795a;color:#1a0b06}
+.sndrow{flex-wrap:wrap;gap:6px;margin:6px 0 10px}.sndrow .btn{flex:1 1 auto;width:auto;margin:0}
 </style></head>
 <body>
 <header><div class="logo">X-FRAME</div><button class="hbtn" data-tab="ajustes">💾 Copia<span class="dot" id="bkdot" style="display:none"></span></button></header>
@@ -353,7 +357,6 @@ var XF_EXIMG={
  lun02:{img:'Leverage_Chest_Press',st:'similar',note:'Prensa convergente de palanca, pero sentado; la tuya es en banco plano tumbado.'},
  lun03:{img:'Butterfly',st:'exacto',note:''},
  lun04:{img:'Cable_Seated_Lateral_Raise',st:'similar',note:'En la foto se hace a dos brazos con poleas cruzadas; tú lo haces a un brazo con la polea baja.'},
- lun05:{img:'wger1744_Machine_Lateral_Raise',st:'exacto',note:''},
  lun06:{img:'Cable_Rope_Overhead_Triceps_Extension',st:'exacto',note:''},
  lun07:{img:'Cable_One_Arm_Tricep_Extension',st:'exacto',note:'Pushdown a una mano en polea alta (en la foto, agarre supino; el neutro o prono también vale).'},
  lun08:{img:'Ab_Crunch_Machine',st:'exacto',note:''},
@@ -374,7 +377,6 @@ var XF_EXIMG={
  jue02:{img:'Leverage_High_Row',st:'exacto',note:''},
  jue03:{img:'Seated_One-arm_Cable_Pulley_Rows',st:'similar',note:'Remo bajo a un brazo en polea; el tuyo es en la máquina isolateral de palanca con apoyo de pecho.'},
  jue04:{img:'Smith_Machine_Incline_Bench_Press',st:'exacto',note:''},
- jue05:{img:'wger1744_Machine_Lateral_Raise',st:'exacto',note:''},
  jue06:{img:'Reverse_Machine_Flyes',st:'exacto',note:'Opción pec-deck invertido.'},
  jue07:{img:'Ab_Crunch_Machine',st:'exacto',note:''},
  vie01:{img:'Smith_Machine_Stiff-Legged_Deadlift',st:'exacto',note:'Multipower. En el rumano mantén las rodillas algo flexionadas y fijas.'},
@@ -389,11 +391,50 @@ var XF_EXIMG={
  sab04a:{img:'Cable_Hammer_Curls_-_Rope_Attachment',st:'exacto',note:''},
  sab04b:{img:'Cable_Rope_Overhead_Triceps_Extension',st:'exacto',note:''}
 };
+// Ilustraciones anatómicas propias (generadas para X-FRAME). Tienen prioridad sobre las fotos; mar07a/mar07b siguen con foto.
+var XF_EXILL={
+ lun01:{img:'ai_lun01',note:''},
+ lun02:{img:'ai_lun02',note:''},
+ lun03:{img:'ai_lun03',note:''},
+ lun04:{img:'ai_lun04',note:''},
+ lun05:{img:'ai_lun05',note:''},
+ lun06:{img:'ai_lun06',note:''},
+ lun07:{img:'ai_lun07',note:''},
+ lun08:{img:'ai_lun08',note:''},
+ mar01:{img:'ai_mar01',note:''},
+ mar02:{img:'ai_mar02',note:''},
+ mar03:{img:'ai_mar03',note:'Máquina isolateral genérica; mantén el pecho apoyado e inclinado unos 45°.'},
+ mar04:{img:'ai_mar04',note:''},
+ mar05:{img:'ai_mar05',note:''},
+ mar06:{img:'ai_mar06',note:''},
+ mie01:{img:'ai_mie01',note:''},
+ mie02:{img:'ai_mie02',note:''},
+ mie03:{img:'ai_mie03',note:''},
+ mie04:{img:'ai_mie04',note:'Máquina simplificada: lo importante es el gesto (talones hacia debajo del asiento).'},
+ mie05:{img:'ai_mie05',note:'Los dos fotogramas tienen un encuadre ligeramente distinto.'},
+ jue01:{img:'ai_jue01',note:''},
+ jue02:{img:'ai_jue02',note:''},
+ jue03:{img:'ai_jue03',note:''},
+ jue04:{img:'ai_jue04',note:''},
+ jue05:{img:'ai_lun05',note:''},
+ jue06:{img:'ai_mar04',note:'Opción pec-deck invertido.'},
+ jue07:{img:'ai_lun08',note:''},
+ vie01:{img:'ai_vie01',note:'Ilustrado en máquina de palanca; en multipower el gesto es el mismo.'},
+ vie02:{img:'ai_vie02',note:''},
+ vie03:{img:'ai_mie02',note:''},
+ vie04:{img:'ai_mie03',note:''},
+ vie05:{img:'ai_vie05',note:'Movimiento de tobillo corto: sube al máximo sobre la punta del pie.'},
+ sab01:{img:'ai_lun04',note:''},
+ sab02:{img:'ai_mar04',note:''},
+ sab03a:{img:'ai_sab03a',note:''},
+ sab03b:{img:'ai_sab03b',note:''},
+ sab04a:{img:'ai_sab04a',note:''},
+ sab04b:{img:'ai_lun06',note:''}
+};
 // IMG-END
 // Origen y licencia de cada imagen
 var XF_IMGSRC={
- _default:{src:'free-exercise-db (yuhonas)',lic:'Unlicense (dominio público)',url:'https://github.com/yuhonas/free-exercise-db',credit:false},
- wger1744_Machine_Lateral_Raise:{src:'wger.de · ejercicio 1744 «Machine Side Lateral Raises» (ilustración dividida en dos fotogramas)',lic:'CC BY-SA 4.0',url:'https://wger.de/es/exercise/1744/view/',credit:true}
+ _default:{src:'free-exercise-db (yuhonas)',lic:'Unlicense (dominio público)',url:'https://github.com/yuhonas/free-exercise-db',credit:false}
 };
 
 var XF_EXVIDEO={"jue02": "vid/jue02.mp4", "jue03": "vid/jue03.mp4", "lun02": "vid/lun02.mp4", "lun04": "vid/lun04.mp4", "mar01": "vid/mar01.mp4", "mar02": "vid/mar02.mp4", "mar03": "vid/mar03.mp4", "mar06": "vid/mar06.mp4", "sab01": "vid/sab01.mp4"};
@@ -852,7 +893,7 @@ function warmSets(e){var t=String(e.warm||''),out=[],m,re=/A(\d)\s*\(([^)]*)\)/g
   while((m=re.exec(t))){var x=m[2],r=x.match(/^\s*([\d–-]+)/),p=x.match(/(\d+)(?:\s*[–-]\s*(\d+))?\s*%/);out.push({t:'A'+m[1],reps:r?r[1]:'—',pct:p?(p[2]?(+p[1]+ +p[2])/2:+p[1]):null,fmt:'A'});}
   if(!out.length&&(m=t.match(/(\d+)\s*×\s*(\d+)/))){var p2=t.match(/(\d+)\s*%/),n=Math.min(3,+m[1]);for(var i=0;i<n;i++)out.push({t:n>1?'A'+(i+1):'A',reps:m[2],pct:p2?+p2[1]:null,light:/ligera/i.test(t),fmt:'1'});}
   out.forEach(function(w,i){var last=i===out.length-1;w.rest=w.fmt==='A'?(last?120:60):(last?90:(w.light?45:60));});return out;}
-// ---------- audio: campanilla suave ----------
+// ---------- audio: campanilla suave (catálogo completo en 10b-sounds.js) ----------
 var actx=null,amaster=null,aunlocked=false;
 function audioInit(){
   if(!actx){try{var C=window.AudioContext||window.webkitAudioContext;if(C){actx=new C();amaster=actx.createGain();amaster.gain.value=1;amaster.connect(actx.destination);}}catch(e){}}
@@ -868,7 +909,7 @@ function withAudio(fn){audioInit();if(!actx)return;var go=function(){try{fn(actx
   if(actx.state!=='running'&&actx.resume){actx.resume().then(go,go);}else go();}
 var CHIME_PEAK=0.35; // volumen 50 % → pico 0,35 (la alarma anterior iba a 0,95 con compresor); al 100 % → 0,7
 function chimeOnce(t0,g){[660,880,1100].forEach(function(f,i){bell(t0+i*0.17,f,1.1,g);});}
-function alarm(){var g=CHIME_PEAK*vol()*2;if(g<=0)return;withAudio(function(t0){chimeOnce(t0,g);chimeOnce(t0+1.5,g*0.8);});}
+function alarm(){var g=CHIME_PEAK*vol()*2;if(g<=0)return;playSound(sndRestKey(),'rest',g);} // sonido elegido en Ajustes › Sonidos (10b-sounds.js)
 function prewarn(){var g=CHIME_PEAK*vol()*1.2;if(g<=0)return;withAudio(function(t0){bell(t0,990,0.18,g);});}
 var ALARM_VIB=[220,120,220,500,220,120,220];
 function vib(p){try{navigator.vibrate&&navigator.vibrate(p);}catch(e){}}
@@ -1112,7 +1153,8 @@ function vAjustes(){var lb=st.lastBackup?new Date(st.lastBackup):null;
    (Object.keys(HMAP).length?'<div class="mu sm">'+Object.keys(HMAP).length+' ejercicios de Hevy ya asociados (se recuerdan para la próxima vez).</div>':'')+'</div>';
   h+='<div class="card"><h3>Avisos del descanso</h3><label class="field">Volumen del aviso · <span id="volv">'+Math.round(vol()*100)+'</span><input type="range" id="vol" min="0" max="100" step="5" value="'+Math.round(vol()*100)+'"></label>'+
    '<button class="btn ghost" data-act="testbeep">🔔 Probar pitido</button><button class="btn ghost" data-act="testwarn">Probar aviso de 10 s</button>'+
-   '<button class="btn ghost" data-act="notif">'+('Notification'in window?(Notification.permission==='granted'?'Notificaciones activadas ✓':'Activar notificaciones del descanso'):'Notificaciones no disponibles')+'</button><div class="mu sm">Campanilla suave de 3 notas, dos veces. En iPhone el interruptor de silencio también la apaga.</div></div>';
+   '<button class="btn ghost" data-act="notif">'+('Notification'in window?(Notification.permission==='granted'?'Notificaciones activadas ✓':'Activar notificaciones del descanso'):'Notificaciones no disponibles')+'</button><div class="mu sm">El sonido de fin de descanso y el de récord se eligen en «Sonidos». En iPhone el interruptor de silencio también los apaga.</div></div>';
+  h+=vSonidos();
   h+='<div class="card"><h3>Ajustes por ejercicio</h3><div class="mu sm">Salto de progresión, redondeo al disco/pin real, % de cada back-off y descanso. Por defecto: salto 2,5 kg (2 kg en mancuernas); redondeo 1,25 kg (2 kg en mancuernas); % según la rutina.</div>';
   ROUTINE.forEach(function(d){h+='<div class="grp">'+esc(d.day)+' · '+esc(d.title)+'</div>';d.ex.forEach(function(e){var c=cfg(e.id);
     h+='<details><summary>'+esc(e.n)+'</summary><div class="cfg" data-id="'+e.id+'">'+
@@ -1123,11 +1165,11 @@ function vAjustes(){var lb=st.lastBackup?new Date(st.lastBackup):null;
      '</div><button class="btn ghost" data-act="cfgreset" data-id="'+e.id+'">Restablecer valores de la rutina</button></details>';});});
   h+='</div><div class="card"><h3>Protocolo ON AIR X-FRAME</h3>'+PROTOCOLO.map(function(p){return'<details><summary>'+esc(p[0])+'</summary><p class="sm">'+esc(p[1])+'</p></details>';}).join('')+'</div>';
   h+=vRutinaCard();
-  h+='<div class="card"><h3>Créditos de imágenes</h3><div class="mu sm">Fotos: free-exercise-db (yuhonas), dominio público (Unlicense). Ilustración de elevación lateral en máquina: wger.de (ejercicio 1744), CC BY-SA 4.0. Las imágenes marcadas «Variante similar» no son tu máquina exacta. Los vídeos de técnica marcados «generado» están creados con IA; la máquina puede no ser idéntica a la de tu gimnasio.</div></div>';
+  h+='<div class="card"><h3>Créditos de imágenes</h3><div class="mu sm">Ilustraciones anatómicas marcadas «Ilustración generada»: creadas con IA para X-FRAME (sin imágenes de terceros como base); la máquina puede no ser idéntica a la tuya. Fotos: free-exercise-db (yuhonas), dominio público (Unlicense). Las imágenes marcadas «Variante similar» no son tu máquina exacta. Los vídeos de técnica marcados «generado» están creados con IA; la máquina puede no ser idéntica a la de tu gimnasio. Sonido «Yeah buddy!»: voz sintética genérica (Piper TTS, voz «joe», CC0).</div></div>';
   h+='<div class="card"><h3>Zona peligrosa</h3><button class="btn danger" data-act="wipe">Borrar todos los datos</button></div><div class="mu sm" style="text-align:center;margin:10px 0 20px">X-FRAME</div>';
   return h;}
 // ---------- copia de seguridad ----------
-function backupBlob(){return new Blob([JSON.stringify({app:'XFRAME',version:3,exported:new Date().toISOString(),data:st,routines:RV,myRoutines:MY,hevyMap:HMAP},null,1)],{type:'application/json'});}
+function backupBlob(){return new Blob([JSON.stringify({app:'XFRAME',version:3,exported:new Date().toISOString(),data:st,routines:RV,myRoutines:MY,hevyMap:HMAP,sounds:sndBackup()},null,1)],{type:'application/json'});}
 function bname(){return'xframe-copia-'+today()+'.json';}
 function exportBackup(){var url=URL.createObjectURL(backupBlob()),a=document.createElement('a');a.href=url;a.download=bname();document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(url);a.remove();},1500);
   st.lastBackup=new Date().toISOString();save();render();toast('Copia exportada');}
@@ -1139,6 +1181,7 @@ function importJSON(txt,ask){var j=JSON.parse(txt),d=j.data||j;
   if(j.routines&&Array.isArray(j.routines.list)&&j.routines.list.length){RV=j.routines;rvSave();applyRoutine();}
   if(j.myRoutines&&Array.isArray(j.myRoutines.list)){MY=j.myRoutines;if(!Array.isArray(MY.folders))MY.folders=[];mySave();}
   if(j.hevyMap&&typeof j.hevyMap==='object'){HMAP=j.hevyMap;hmSave();}
+  if(j.sounds)sndRestore(j.sounds).then(function(){if(ui.tab==='ajustes')rerenderKeep();});
   return true;}
 function importFile(f){if(!f)return;var rd=new FileReader();rd.onload=function(){try{if(importJSON(rd.result,true)){render();toast('Copia importada');}}catch(e){alert('El archivo no es una copia válida de X-FRAME.');}};rd.readAsText(f);}
 // ---------- imágenes, vídeos y ficha técnica ----------
@@ -1149,18 +1192,23 @@ function exImgInfo(id){var m=(typeof XF_EXIMG!=='undefined'&&XF_EXIMG[id])||null
 function libImgInfo(e){var dbid=e&&e.lib;if(!dbid&&e&&e.id&&e.id.indexOf('fx_')===0){var r=libIndex()[e.id];dbid=r&&r[0];}
   if(!dbid)return null;var r2=(window.XF_LIB||[]).filter(function(x){return x[0]===dbid;})[0];if(!r2||!r2[7])return null;
   var u=REMOTE_IMG+encodeURIComponent(dbid)+'/';return{a:u+'0.jpg',b:u+'1.jpg',st:'biblioteca',note:'',src:XF_IMGSRC._default,remote:true};}
-function imgFor(e){return exImgInfo(e.id)||(e.img&&exImgInfo(e.img))||libImgInfo(e);}
+function illInfo(id){var m=(typeof XF_EXILL!=='undefined'&&id&&XF_EXILL[id])||null;if(!m)return null;
+  return{a:imgSrc(m.img,0),b:imgSrc(m.img,1),st:'ilustracion',note:m.note||'',src:{src:'Ilustración generada para X-FRAME',lic:'propia',credit:false},ill:true};}
+function imgFor(e){return illInfo(e.id)||exImgInfo(e.id)||(e.img&&(illInfo(e.img)||exImgInfo(e.img)))||libImgInfo(e);}
 function videoFor(id){var v=(typeof XF_EXVIDEO!=='undefined'&&XF_EXVIDEO[id])||null;if(v&&window.XF_VIDDATA&&XF_VIDDATA[id])return XF_VIDDATA[id];return v;}
 function thumb(e,small){var m=imgFor(e);if(!m)return small?'<div class="thumb sm2 noimg">🏋️</div>':'';
-  return'<button class="thumb'+(small?' sm2':'')+'" data-act="tec" data-id="'+esc(e.id)+'" aria-label="Ver técnica"><img src="'+m.a+'" alt="" loading="lazy" decoding="async"><img class="f2" src="'+m.b+'" alt="" loading="lazy" decoding="async">'+(small?'':'<span class="ref">'+(videoFor(e.id)?'vídeo':m.st==='similar'?'similar':'técnica')+'</span>')+'</button>';}
+  return'<button class="thumb'+(small?' sm2':'')+'" data-act="tec" data-id="'+esc(e.id)+'" aria-label="Ver técnica"><img src="'+m.a+'" alt="" loading="lazy" decoding="async"><img class="f2" src="'+m.b+'" alt="" loading="lazy" decoding="async">'+(small?'':'<span class="ref">'+(m.ill?'técnica':videoFor(e.id)?'vídeo':m.st==='similar'?'similar':'técnica')+'</span>')+'</button>';}
 function tecOf(id){return(typeof XF_TEC!=='undefined'&&XF_TEC[id])||null;}
 function vTec(id){var e=getEx(id)||libDef(id)||{id:id,n:exName(id),eq:''},m=imgFor(e),v=videoFor(id),t=tecOf(id);
   var h='<div class="sheet"><div class="shh"><div class="sht">'+esc(e.n)+'</div><button class="shx" data-act="mclose" aria-label="Cerrar">✕</button></div><div class="shb">';
-  if(v)h+='<div class="zimg vid"><video src="'+esc(v)+'" autoplay loop muted playsinline webkit-playsinline preload="auto"></video></div>';
+  var mode=(v&&m)?(ui.tecMode==='vid'?'vid':'ill'):(v?'vid':'ill');
+  if(v&&m)h+='<div class="seg tecseg"><button class="'+(mode==='ill'?'on':'')+'" data-act="tecmode" data-m="ill">Ilustración</button><button class="'+(mode==='vid'?'on':'')+'" data-act="tecmode" data-m="vid">Vídeo</button></div>';
+  if(mode==='vid')h+='<div class="zimg vid"><video src="'+esc(v)+'" autoplay loop muted playsinline webkit-playsinline preload="auto"></video></div>';
   else if(m)h+='<div class="zimg big"><img src="'+m.a+'" alt=""><img class="f2 slow" src="'+m.b+'" alt=""></div>';
   else h+='<div class="zimg big noimg">Sin imagen</div>';
-  if(v){h+='<div class="imgtag ok vg">Vídeo de técnica (generado)</div><div class="mu sm">Vídeo generado por IA a partir de la técnica descrita abajo; la máquina puede no ser idéntica a la de tu gimnasio.</div>';}
-  if(!v&&m){h+='<div class="imgtag '+(m.st==='similar'?'sim':'ok')+'">'+(m.st==='similar'?'Variante similar':m.st==='biblioteca'?'Imagen de la biblioteca':'Ejercicio exacto')+'</div>';
+  if(mode==='vid'){h+='<div class="imgtag ok vg">Vídeo de técnica (generado)</div><div class="mu sm">Vídeo generado por IA a partir de la técnica descrita abajo; la máquina puede no ser idéntica a la de tu gimnasio.</div>';}
+  else if(m&&m.ill){h+='<div class="imgtag ok ig">Ilustración generada</div><div class="mu sm">Ilustración anatómica creada con IA para X-FRAME: en rojo, el músculo principal. Inicio y final del movimiento alternándose; la máquina puede no ser idéntica a la de tu gimnasio.'+(m.note?' '+esc(m.note):'')+'</div>';}
+  else if(m){h+='<div class="imgtag '+(m.st==='similar'?'sim':'ok')+'">'+(m.st==='similar'?'Variante similar':m.st==='biblioteca'?'Imagen de la biblioteca':'Ejercicio exacto')+'</div>';
     if(m.note)h+='<div class="mu sm">'+esc(m.note)+'</div>';
     if(m.src&&m.src.credit)h+='<div class="credit">Imagen: '+esc(m.src.src)+' · '+esc(m.src.lic)+'</div>';}
   h+='<div class="mu sm" style="margin-top:6px">'+esc(e.eq||'')+'</div>';
@@ -1597,6 +1645,64 @@ function repeatSession(sid){var s=st.sessions.filter(function(x){return String(x
   var list=Object.keys(s.ex).map(function(id){var e=getEx(id);if(e)return clone(e);var n=s.names&&s.names[id]||id;return{id:id,n:n,eq:'',warm:'',cues:[],sets:s.ex[id].map(function(z,i){return S(i?'BO'+i:'TS','—','—');}),rest:'2 min',restS:120};});
   var cur=inProgress();if(cur&&cur!=='empty'&&!confirm('Tienes un entreno en curso. Se queda como borrador. ¿Empezar la repetición?'))return;
   var d=newDraft('empty');d.title='Repetición · '+sessTitle(s);d.list=list.map(hydEx);setCtx(d);d.list.forEach(function(e){d.ex[e.id]=fillSets(e);});d.started=true;d.t0=Date.now();st.draft.empty=d;st.cur='empty';save();closeModal();ui.tab='hoy';ui.view='empty';render();}
+// ---------- sonidos: catálogo de fin de descanso y de récord (techo superado) ----------
+// «Yeah buddy!»: voz sintética genérica (Piper TTS, voz «joe», dataset CC0), procesada; no imita a ninguna persona.
+var SND_YEAH='data:audio/mpeg;base64,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';
+var SNDS=[['chime','Campanilla suave'],['campana','Campana'],['gong','Gong'],['pitido','Pitido corto'],['yeah','«Yeah buddy!» (voz)'],['mine','Mi audio']];
+var SNDMAX=2*1024*1024,SNDBK=1536*1024; // máx. por archivo; en la copia solo si el total cabe en 1,5 MB
+var SNDC={}; // caché en memoria de audios propios {rest|pr:{name,type,size,b64}}
+var sbuf={};
+function sndDB(){return new Promise(function(res,rej){if(!window.indexedDB){rej(new Error('sin IndexedDB'));return;}var rq=indexedDB.open('xframe-audio',1);
+  rq.onupgradeneeded=function(){if(!rq.result.objectStoreNames.contains('files'))rq.result.createObjectStore('files');};rq.onsuccess=function(){res(rq.result);};rq.onerror=function(){rej(rq.error);};});}
+function sndTx(mode,fn){return sndDB().then(function(d){return new Promise(function(res,rej){var t=d.transaction('files',mode),s=t.objectStore('files'),r=fn(s);t.oncomplete=function(){res(r&&r.result);};t.onerror=function(){rej(t.error);};});});}
+function ab2b64(ab){var u=new Uint8Array(ab),s='',i;for(i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s);}
+function b642ab(b){var s=atob(b),u=new Uint8Array(s.length);for(var i=0;i<s.length;i++)u[i]=s.charCodeAt(i);return u.buffer;}
+function sndLoad(){return Promise.all(['rest','pr'].map(function(k){return sndTx('readonly',function(s){return s.get(k);}).then(function(v){if(v&&v.data){SNDC[k]={name:v.name,type:v.type,size:v.data.byteLength,b64:ab2b64(v.data)};delete sbuf['mine-'+k];}else delete SNDC[k];});})).catch(function(){});}
+var SNDREADY=sndLoad();
+function sndSave(k,name,type,ab){return sndTx('readwrite',function(s){s.put({name:name,type:type,data:ab,t:Date.now()},k);}).then(sndLoad);}
+function sndDel(k){return sndTx('readwrite',function(s){s.delete(k);}).then(function(){delete SNDC[k];delete sbuf['mine-'+k];});}
+function sndBackup(){var tot=0,o={};Object.keys(SNDC).forEach(function(k){tot+=SNDC[k].size;o[k]={name:SNDC[k].name,type:SNDC[k].type,b64:SNDC[k].b64};});return tot&&tot<=SNDBK?o:null;}
+function sndRestore(o){if(!o||typeof o!=='object')return Promise.resolve();return Promise.all(Object.keys(o).filter(function(k){return(k==='rest'||k==='pr')&&o[k]&&o[k].b64;}).map(function(k){return sndSave(k,o[k].name||'audio',o[k].type||'',b642ab(o[k].b64));}));}
+function decodeBuf(ab){return new Promise(function(res,rej){try{var p=actx.decodeAudioData(ab,res,rej);if(p&&p.then)p.then(res,rej);}catch(e){rej(e);}});}
+function bufFor(key,k){if(sbuf[key])return Promise.resolve(sbuf[key]);var ab;
+  if(key==='yeah')ab=b642ab(SND_YEAH.split(',')[1]);else if(SNDC[k])ab=b642ab(SNDC[k].b64);else return Promise.reject(new Error('sin audio'));
+  return decodeBuf(ab).then(function(b){sbuf[key]=b;return b;});}
+function playBuf(b,t,g){var s=actx.createBufferSource(),gn=actx.createGain();s.buffer=b;gn.gain.value=g;s.connect(gn);gn.connect(amaster);s.start(t);}
+// campana: parciales inarmónicos tipo campana de iglesia
+function campana(t0,g){[[0.5,0.5,3.2],[1,1,2.6],[1.19,0.45,2],[1.56,0.3,1.6],[2,0.35,1.4],[2.51,0.18,1],[2.66,0.15,0.9],[3.01,0.08,0.7]].forEach(function(p){var o=actx.createOscillator(),gn=actx.createGain();o.type='sine';o.frequency.setValueAtTime(523*p[0],t0);
+  gn.gain.setValueAtTime(0.0001,t0);gn.gain.exponentialRampToValueAtTime(Math.max(0.0002,g*p[1]*0.6),t0+0.006);gn.gain.exponentialRampToValueAtTime(0.0001,t0+p[2]);o.connect(gn);gn.connect(amaster);o.start(t0);o.stop(t0+p[2]+0.05);});}
+// gong: fundamental grave + parciales con ataque lento y ligera modulación
+function gong(t0,g){[[1,1,4.5],[1.48,0.5,3.8],[2.03,0.35,3.2],[2.72,0.25,2.6],[3.43,0.15,2],[4.41,0.08,1.5]].forEach(function(p,i){var o=actx.createOscillator(),gn=actx.createGain(),lf=actx.createOscillator(),lg=actx.createGain();
+  o.type='sine';o.frequency.setValueAtTime(98*p[0],t0);lf.frequency.value=3+i;lg.gain.value=98*p[0]*0.004;lf.connect(lg);lg.connect(o.frequency);
+  gn.gain.setValueAtTime(0.0001,t0);gn.gain.exponentialRampToValueAtTime(Math.max(0.0002,g*p[1]*0.9),t0+0.05+i*0.03);gn.gain.exponentialRampToValueAtTime(0.0001,t0+p[2]);
+  o.connect(gn);gn.connect(amaster);o.start(t0);lf.start(t0);o.stop(t0+p[2]+0.05);lf.stop(t0+p[2]+0.05);});}
+function pitido(t0,g){[0,0.2,0.4].forEach(function(d){var o=actx.createOscillator(),gn=actx.createGain();o.type='square';o.frequency.setValueAtTime(1046,t0+d);
+  gn.gain.setValueAtTime(0.0001,t0+d);gn.gain.exponentialRampToValueAtTime(Math.max(0.0002,g*0.22),t0+d+0.005);gn.gain.setValueAtTime(g*0.22,t0+d+0.1);gn.gain.exponentialRampToValueAtTime(0.0001,t0+d+0.13);
+  o.connect(gn);gn.connect(amaster);o.start(t0+d);o.stop(t0+d+0.15);});}
+// reproduce el sonido «key» (para k = 'rest' | 'pr'); g ya incluye el volumen general
+function playSound(key,k,g){if(!key||key==='none'||g<=0)return;withAudio(function(t0){
+  if(key==='chime'){chimeOnce(t0,g);chimeOnce(t0+1.5,g*0.8);}
+  else if(key==='campana'){campana(t0,g);campana(t0+1.3,g*0.8);}
+  else if(key==='gong')gong(t0,g);
+  else if(key==='pitido')pitido(t0,g);
+  else if(key==='yeah'||key==='mine'){var kk=key==='mine'?'mine-'+k:'yeah';bufFor(kk,k).then(function(b){playBuf(b,actx.currentTime+0.02,Math.min(2,g*2.6));},function(){chimeOnce(actx.currentTime+0.02,g);});}
+  else chimeOnce(t0,g);});}
+function sndRestKey(){return(st.prefs&&st.prefs.sndRest)||'chime';}
+function sndPRKey(){return(st.prefs&&st.prefs.sndPR)||'campana';}
+function prSound(){playSound(sndPRKey(),'pr',CHIME_PEAK*vol()*2);}
+function sndOpts(cur,k,withNone){return(withNone?'<option value="none"'+(cur==='none'?' selected':'')+'>Sin sonido</option>':'')+SNDS.filter(function(s){return s[0]!=='mine'||SNDC[k];}).map(function(s){return'<option value="'+s[0]+'"'+(s[0]===cur?' selected':'')+'>'+esc(s[0]==='mine'?'Mi audio: '+SNDC[k].name:s[1])+'</option>';}).join('');}
+function sndRow(k,lbl){var cur=k==='rest'?sndRestKey():sndPRKey();if(cur==='mine'&&!SNDC[k])cur=k==='rest'?'chime':'campana';
+  return'<label class="field">'+lbl+'<select id="snd-'+k+'" class="pin">'+sndOpts(cur,k,k==='pr')+'</select></label>'+
+   '<div class="row sndrow"><button class="btn ghost" data-act="sndprev" data-k="'+k+'">▶ Escuchar</button><button class="btn ghost" data-act="sndup" data-k="'+k+'">⬆ Subir mi audio</button>'+
+   (SNDC[k]?'<button class="btn ghost" data-act="snddel" data-k="'+k+'">Quitar mi audio</button>':'')+'</div>'+
+   '<input type="file" id="sndfile-'+k+'" accept="audio/*,.mp3,.m4a,.aac,.wav,.ogg" style="display:none">'+
+   (SNDC[k]?'<div class="mu sm">Mi audio: '+esc(SNDC[k].name)+' · '+Math.round(SNDC[k].size/1024)+' KB</div>':'');}
+function vSonidos(){return'<div class="card" id="sonidos"><h3>Sonidos</h3>'+sndRow('rest','Fin del descanso')+sndRow('pr','Récord (techo superado)')+
+  '<div class="mu sm">Los dos respetan el volumen de arriba. «Mi audio»: hasta 2 MB (mp3, m4a, wav…); se guarda en este dispositivo y va dentro de la copia de seguridad si en total ocupa 1,5 MB o menos.</div></div>';}
+function sndUpload(k,f){if(!f)return;if(f.size>SNDMAX){alert('El audio ocupa '+(f.size/1048576).toFixed(1)+' MB; el máximo es 2 MB. Recórtalo o expórtalo en mp3.');return;}
+  var rd=new FileReader();rd.onload=function(){var ab=rd.result;audioInit();var chk=actx?decodeBuf(ab.slice(0)):Promise.resolve();
+    chk.then(function(){return sndSave(k,f.name,f.type,ab);}).then(function(){st.prefs[k==='rest'?'sndRest':'sndPR']='mine';save();render();toast('Audio guardado');playSound('mine',k,CHIME_PEAK*vol()*2);},
+      function(){alert('No he podido leer ese archivo de audio. Prueba con mp3, m4a o wav.');});};rd.readAsArrayBuffer(f);}
 // ---------- aviso semanal de copia ----------
 function vBackupNag(){if(!needBackup())return'';var lb=st.lastBackup?hum(st.lastBackup.slice(0,10)):null;
   return'<div class="card nag"><div><b>💾 Guarda una copia</b><div class="mu sm">'+(lb?'Última copia externa: '+lb+'. ':'Aún no has guardado ninguna copia fuera de la app. ')+'Guárdala en Archivos, iCloud o envíatela por WhatsApp.</div></div><button class="btn" data-act="share">Guardar copia</button></div>';}
@@ -1628,7 +1734,7 @@ function markDone(row){var dr=draft(ui.wk),id=row.dataset.id,i=+row.dataset.i,e=
   s.done=true;if(!dr.started){dr.started=true;st.cur=ui.wk;}save();row.classList.add('done');
   var ce=ceilOf(id);
   if(i===0&&ce!=null&&num(s.r)>=ce){var nx=r2(num(s.w)+cfg(id).jump);
-    banner('¡Has superado tu techo!','<b>'+esc(e.n)+'</b><br>'+esc(s.w)+' kg × '+esc(s.r)+' (techo '+ce+'). La próxima sesión: <b class="ac">sube a '+fmt(nx)+' kg</b>.');
+    prSound();banner('¡Has superado tu techo!','<b>'+esc(e.n)+'</b><br>'+esc(s.w)+' kg × '+esc(s.r)+' (techo '+ce+'). La próxima sesión: <b class="ac">sube a '+fmt(nx)+' kg</b>.');
     notify('X-FRAME · ¡Techo superado!',e.n+': próxima sesión sube a '+fmt(nx)+' kg');}
   var r=restFor(e,i),lbl=nextLabel(dr,e,i,false);
   if(r>0)startTimer(r,lbl);else{stopTimer();toast(lbl);}}
@@ -1758,6 +1864,10 @@ document.addEventListener('click',function(ev){var b=ev.target.closest('[data-ac
   snaprest:function(){if(!confirm('¿Restaurar esta copia interna? Antes guardo una copia del estado actual. La app se recargará.'))return;XFS.restore(+b.dataset.id).then(function(){location.reload();},function(e){alert('No se pudo restaurar: '+(e&&e.message||e));});},
   notif:function(){if(!('Notification'in window)){toast('Este navegador no permite notificaciones');return;}Notification.requestPermission().then(function(){render();});},
   testbeep:function(){alarm();vib(ALARM_VIB);toast('🔔 Aviso de fin de descanso');},
+  sndprev:function(){var k=b.dataset.k,sel=$('#snd-'+k);playSound(sel?sel.value:(k==='rest'?sndRestKey():sndPRKey()),k,CHIME_PEAK*vol()*2);},
+  sndup:function(){var i=$('#sndfile-'+b.dataset.k);if(i)i.click();},
+  snddel:function(){var k=b.dataset.k;if(!confirm('¿Quitar tu audio?'))return;sndDel(k).then(function(){var pk=k==='rest'?'sndRest':'sndPR';if(st.prefs[pk]==='mine')st.prefs[pk]=k==='rest'?'chime':'campana';save();rerenderKeep();toast('Audio quitado');});},
+  tecmode:function(){ui.tecMode=b.dataset.m==='vid'?'vid':'ill';renderModal();},
   testwarn:function(){prewarn();vib(60);},
   cfgreset:function(){delete st.cfg[b.dataset.id];save();render();toast('Valores restablecidos');},
   sub:function(){ui.sub=b.dataset.s;if(ui.sub==='snaps')SNAPS=null;render();},
@@ -1789,6 +1899,8 @@ document.addEventListener('change',function(ev){var t=ev.target;
   if(t.id==='pdfin'){pdfImport(t.files[0]);t.value='';return;}
   if(t.id==='hevyin'){var f=t.files[0];t.value='';if(!f)return;var rd=new FileReader();rd.onload=function(){try{hevyStart(rd.result,f.name);}catch(e){alert('No he podido leer el CSV de Hevy: '+(e&&e.message||e));}};rd.readAsText(f);return;}
   if(t.id==='vol'){alarm();return;}
+  if(t.id==='snd-rest'||t.id==='snd-pr'){var k=t.id.slice(4);st.prefs[k==='rest'?'sndRest':'sndPR']=t.value;save();playSound(t.value,k,CHIME_PEAK*vol()*2);return;}
+  if(t.id==='sndfile-rest'||t.id==='sndfile-pr'){var f2=t.files[0];t.value='';sndUpload(t.id.slice(8),f2);return;}
   if(t.id==='libm'||t.id==='libe'){ui.lib[t.id==='libm'?'m':'e']=t.value;ui.lib.n=40;if(ui.modal)renderModal();else rerenderKeep();return;}
   if(t.dataset&&t.dataset.hv!=null){var V=ui.hv,tt=V.titles[+t.dataset.hv];V.map[tt.title]=t.value;var c=V.titles.filter(function(x){return V.map[x.title];}).length;var hc=$('#hvcount');if(hc)hc.textContent=c+' de '+V.titles.length+' asociados';var hb=$('[data-act=hvok]');if(hb)hb.textContent='Importar '+c+' ejercicios';return;}
   if(t.id==='cmpA'||t.id==='cmpB'){ui[t.id]=+t.value;render();return;}
@@ -1802,10 +1914,11 @@ window.XFt=function(d){if(!d||!tm.end){stopTimer();return;}if(tm.fired){tm.end=D
 window.XF={rv:function(){return RV;},my:function(){return MY;},hmap:function(){return HMAP;},routine:function(){return ROUTINE;},seq:function(){return SEQ;},builtin:BUILTIN,pdfImportBytes:pdfImportBytes,imp:function(){return ui.imp;},alarm:alarm,prewarn:prewarn,vol:vol,
   sub:function(s){ui.tab='ajustes';ui.sub=s;render();},timer:startTimer,backoff:backoff,state:function(){return st;},cfg:cfg,suggestion:suggestion,fatigue:fatigue,analysis:analysis,render:render,ui:ui,
   go:function(t,o){ui.tab=t;if(o)for(var k in o)ui[k]=o[k];render();},modal:openModal,closeModal:closeModal,hevyStart:hevyStart,hevyImport:hevyImport,parseHevyDate:parseHevyDate,nextInfo:nextInfo,prevSet:prevSet,topHist:topHist,
-  startWorkout:startWorkout,draft:draft,applyChange:applyChange,libCount:function(){return libList().length;},importJSON:importJSON,prMap:prMap,projected:projected};
+  startWorkout:startWorkout,draft:draft,applyChange:applyChange,libCount:function(){return libList().length;},importJSON:importJSON,prMap:prMap,projected:projected,playSound:playSound,prSound:prSound,sndSave:sndSave,sndBackup:sndBackup,sndc:function(){return SNDC;},sndLoad:sndLoad,imgFor:imgFor};
 // arranque
 try{var rs=sessionStorage.getItem('xframe.restored');if(rs){sessionStorage.removeItem('xframe.restored');setTimeout(function(){toast('Datos recuperados de la copia espejo');},600);}}catch(e){}
 XFS.boot.then(function(){if(ui.tab==='ajustes')rerenderKeep();});
+SNDREADY.then(function(){if(ui.tab==='ajustes'&&Object.keys(SNDC).length)rerenderKeep();});
 render();
 })();
 </script>
